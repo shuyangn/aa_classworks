@@ -2,19 +2,17 @@ require_relative "board"
 require_relative "human_player"
 
 class Game
-    def initialize(player_1_mark,player_2_mark)
-        @player1 = HumanPlayer.new(player_1_mark)
-        @player2 = HumanPlayer.new(player_2_mark)
-        @board = Board.new
-        @currentplayer = @player1
+    def initialize(n,*player_marks)
+        @players = []
+        player_marks.each do |player_mark|
+            @players << HumanPlayer.new(player_mark)
+        end
+        @board = Board.new(n)
+        @currentplayer = @players[0]
     end
 
     def switch_turn
-        if @currentplayer == @player1
-            @currentplayer = @player2
-        else
-            @currentplayer = @player1
-        end
+        @currentplayer = @players.rotate![0]
     end
 
     def play
