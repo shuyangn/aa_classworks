@@ -183,7 +183,7 @@ def prime_factorization(num)
             return *prime_factorization(factor1), *prime_factorization(factor2)
         end
     end
-    [num]
+    [num]   #直到不能继续拆分
 end
 
 # Examples

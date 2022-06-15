@@ -1,0 +1,16 @@
+
+#BFS(node, target)
+1. create a queue with root node inside
+2. until the queue is empty:
+        a. dequeue node
+        b. check node, return if matches target
+        c. add children to queue
+3. return nil
+
+#DFS(node, target)
+1. create a stack with root node inside
+2. until the stack is empty:
+        a. pop node
+        b. check node, return if matches target
+        c. add children to stack   #先进right再进left
+3. return nil

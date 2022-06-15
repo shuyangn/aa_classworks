@@ -1,0 +1,10 @@
+Private Method :
+only be implicit（except setter in private : self.setter）
+只在class内部
+
+Protected Pethod:
+explicit or implicit (self或不写 or another_instance.protect_method), 
+only can be used inside of class
+
+Global Method:
+内部外部都能用
